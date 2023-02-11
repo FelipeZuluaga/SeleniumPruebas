@@ -1,0 +1,27 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug tests",
+            "port": 5859,
+            "timeout": 30000,
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/wdio",
+            "cwd": "${workspaceRoot}",
+            "console": "integratedTerminal",
+            "autoAttachChildProcesses": true,
+            "args": [
+                "config/browser.js",
+                //Set to an spec file and line to only run that one
+                "--spec", "src/welcome/welcome.feature:4",
+            ],
+            "env": {
+                "DEBUG": "true"
+            }
+        }
+    ]
+}

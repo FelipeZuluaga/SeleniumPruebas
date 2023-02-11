@@ -1,0 +1,27 @@
+{
+  "editor.defaultFormatter": "eg2.tslint",
+  "editor.formatOnSave": true,
+  "cucumberautocomplete.steps": ["src/**/*.steps.ts"],
+
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true
+  },
+  "cucumberautocomplete.syncfeatures": "src/**/*.feature",
+  "cucumberautocomplete.strictGherkinCompletion": true,
+  "cucumberautocomplete.smartSnippets": true,
+  "cucumberautocomplete.stepsInvariants": true,
+  "cucumberautocomplete.onTypeFormat": true,
+  "editor.quickSuggestions": {
+    "comments": "on",
+    "strings": "on",
+    "other": "on"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "CucumberOpen.cucumber-official"
+  },
+  "[cucumber]": {
+    "editor.defaultFormatter": "CucumberOpen.cucumber-official"
+  }
+}

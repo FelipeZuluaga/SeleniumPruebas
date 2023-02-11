@@ -1,0 +1,51 @@
+{
+  "name": "pruebas-proyecto-personal",
+  "version": "0.0.1",
+  "description": "Testing project using wdio PruebasProyectoPersonal",
+  "private": true,
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    ":prepare:test": "run-s clean:results clean:lib build",
+    "test": "npm run test:browser --",
+    "test:browser": "run-s :prepare:test \":test:browser -- {@}\" --",
+    ":test:browser": "npm run wdio -- config/browser.js",
+    "test:android": "run-s :prepare:test \":test:android -- {@}\" --",
+    ":test:android": "npm run wdio -- config/android.js",
+    "test:android:real": "run-s :prepare:test \":test:android:real -- {@}\" --",
+    ":test:android:real": "npm run wdio -- config/android-real.js",
+    "test:ios": "run-s :prepare:test \":test:ios -- {@}\" --",
+    ":test:ios": "npm run wdio -- config/ios.js",
+    "test:ios:real": "run-s :prepare:test \":test:ios:real -- {@}\" --",
+    ":test:ios:real": "npm run wdio -- config/ios-real.js",
+    "test:all": "run-s :prepare:test \":test:all -- {@}\" --",
+    ":test:all": "npm run wdio -- config/all.js",
+    "test:all:real": "run-s :prepare:test \":test:all:real -- {@}\" --",
+    ":test:all:real": "npm run wdio -- config/all-real.js",
+    "clean": "run-s clean:results clean:lib clean:modules",
+    "clean:results": "rimraf results/*",
+    "clean:lib": "rimraf lib",
+    "clean:modules": "rimraf node_modules",
+    "info:name": "node -p 'require(\"./package.json\").name'",
+    "info:version": "node -p 'require(\"./package.json\").version'",
+    "wdio": "cross-env SKIP_TS=true wdio",
+    "sonar": "sonar-scanner -Dsonar.sources=src -Dsonar.tests="
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.9",
+    "@types/cucumber": "^6.0.1",
+    "rimraf": "3.0.2",
+    "cross-env": "7.0.0",
+    "npm-run-all": "4.1.5",
+    "sonarqube-scanner": "^2.5.0"
+  },
+  "dependencies": {
+    "@testing/acis-v6": "2.3.0",
+    "chai": "^4.2.0",
+    "ts-node": "^8.6.2",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.8.3"
+  }
+}
